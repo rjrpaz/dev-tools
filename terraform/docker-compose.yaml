@@ -1,9 +1,9 @@
 ---
 version: "2.1"
 services:
-  code-server:
+  tf-server:
     build: .
-    container_name: code-server
+    container_name: tf-server
     environment:
       - PUID=1000
       - PGID=1000
@@ -17,5 +17,6 @@ services:
     volumes:
       - ~/Projects:/projects
     ports:
-      - 9000:8443
+      - 9001:3000
+      - 19001:3001
     restart: unless-stopped
